@@ -1,0 +1,95 @@
+/*    first i reset all items       */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*                             */
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green;
+    flex-direction: column;
+
+}
+
+/*                             */
+img{
+    width: 100px;
+    height: 100px;
+}
+
+/* i use display flex because it makes it easier to style */
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 400px;
+     gap: 5px;
+}
+
+/* tranform property helps us to get the rotation or something like that */
+.card{
+    width: 135px;
+    height: 180px; 
+    position: relative;
+    transform: scale(1);
+   transform-style: preserve-3d;
+    transition: transform .5s;
+}
+/*  so when you click on that card you will see an animation of clicking */
+
+.card:active{
+    transform: scale(0.97);
+    transform: .2s;
+}
+
+.frontface,.backface{
+    position: absolute;
+    height: 110%;
+    width: 110%;
+    padding: 8px;
+    border: 2px solid black;
+    backface-visibility: hidden;
+
+}
+
+/*   it will helps and rotate the card  */
+.frontface{
+    transform: rotateY(180deg);
+}
+.card.flip{
+    transform: rotateY(180deg);
+}
+
+h1{
+    text-align: center;
+    margin: 15px;
+    font-size: 45px;
+    color: moccasin;
+}
+h2{
+    text-align: center;
+    margin: 30px;
+    font-size: 30px;
+    color: moccasin;
+
+}
+
+.score{
+    font-size: 30px;
+    color:white;
+}
+button{
+    padding: 20;
+    font-size: 22px;
+    border:2px solid black;
+}
+p{
+    font-size: 30px;
+    color: white;
+    margin: 10px;
+}
