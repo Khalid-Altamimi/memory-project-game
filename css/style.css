@@ -13,7 +13,6 @@ body{
     align-items: center;
     background: green;
     flex-direction: column;
-
 }
 
 /*                             */
@@ -28,23 +27,16 @@ img{
     flex-wrap: wrap;
     width: 700px;
     height: 400px;
-     gap: 5px;
+    gap: 5px;
 }
 
-/* tranform property helps us to get the rotation or something like that */
+/*  helps for rotation or something like that */
 .card{
     width: 135px;
     height: 180px; 
     position: relative;
-    transform: scale(1);
-   transform-style: preserve-3d;
+    transform-style: preserve-3d;
     transition: transform .5s;
-}
-/*  so when you click on that card you will see an animation of clicking */
-
-.card:active{
-    transform: scale(0.97);
-    transform: .2s;
 }
 
 .frontface,.backface{
@@ -54,10 +46,8 @@ img{
     padding: 8px;
     border: 2px solid black;
     backface-visibility: hidden;
-
 }
 
-/*   it will helps and rotate the card  */
 .frontface{
     transform: rotateY(180deg);
 }
