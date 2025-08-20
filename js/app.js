@@ -1,12 +1,16 @@
 const cards = document.querySelectorAll('.card');
 const scoreEl = document.querySelector('.score');
+const attemptsEl = document.querySelector('.Attempts');
+const messageEl = document.querySelector('.message-box')
 
-/*  (2) so for this i need some basic variables */
+/*  (2)  */
 
 let hasFlippedCards = false;
-let firstCard, secondCard; /* so we should know weather we clicking the first card or second  */
+let firstCard, secondCard; /*   */
 let lockBoard = false;  /* lockboard means when i clicked both the card the lockboard will apply */
 let score = 0;
+let attempts =0;
+const maxAttempt =4;
 
 /*  (1) using this fuction when someone clicks on the card the card will get flipped  */
 function flipCard(){
@@ -15,9 +19,11 @@ function flipCard(){
     console.log(this);
     this.classList.toggle('flip');
 
+
     if(hasFlippedCards == false){
-        hasFlippedCards = true;
+        hasFlippedCards = true; /*it marks the first card of a paired as flipped and stores it fisrtCard so later it can be compared with the second */
         firstCard= this;
+
 
         console.log(hasFlippedCards,firstCard);
         return;
@@ -38,8 +44,10 @@ function checkForMatch(){
     if(firstCard.dataset.name== secondCard.dataset.name){
         disableCards();
         updateScore();
+        checkWin();
     }
     else{
+        wrongAttempt();
         unFlipCards();
 
     }
@@ -71,6 +79,24 @@ function updateScore(){
     score++
     scoreEl.textContent= score;
 }
+function wrongAttempt(){
+    attempts++;
+    attemptsEl.textContent= attempts;
+    if (attempts>=maxAttempt){
+        setTimeout (()=> messageEl.innerText = "Game Over! You reached 4 wrong attempts.", 500);
+        lockAllCards();
+    }
+}
+function checkWin(){
+    if(score === cards.length / 2){
+        setTimeout (()=> messageEl.innerText ="Congratulations! You Win!!.", 500);
+
+    }
+}
+/* to stop the player click any cards*/
+function lockAllCards(){
+    cards.forEach(card => card.removeEventListener('click', flipCard));
+}
 
 /* Ffirst*/
     (function shuffle(){
@@ -78,16 +104,17 @@ function updateScore(){
             let randomPos= Math.floor(Math.random()*10);
             card.style.order= randomPos;          /* its a property of css flex*/
 
-        })
+        });
     })();
 
 
 function playagain(){
     resetBoard();
-
-score=0;
-scoreEl.textContent=score;    
-
+    score=0;
+    attempts=0;
+    scoreEl.textContent=score;    
+    attemptsEl.textContent=attempts;    
+    messageEl.textContent = ''
 
 
 cards.forEach(card=>{
@@ -100,4 +127,3 @@ cards.forEach(card=>{
 });
 }
 cards.forEach(card=> card.addEventListener('click',flipCard));
-
