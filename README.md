@@ -17,3 +17,16 @@ As a user, I want to flip two cards at a time to find matching pairs so that I c
 // - Shuffle and reinitialize the grid of cards
 // - Start a new game
 
+My link game:
+https://khalid-altamimi.github.io/memory-project-game/
+
+Technologies Used:
+https://www.youtube.com/watch?v=xWdkt6KSirw
+https://www.youtube.com/watch?v=DABkhfsBAWw
+https://www.youtube.com/watch?v=M0egyNvsN-Y
+https://www.youtube.com/watch?v=ADwdef6vXZU
+https://www.youtube.com/watch?v=ZniVgo8U7ek
+https://www.tekeye.uk/playing_cards/svg-playing-cards
+
+
+
