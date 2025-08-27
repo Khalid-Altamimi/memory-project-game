@@ -23,7 +23,7 @@ As a user, I want to flip two cards at a time to find matching pairs so that I c
 My link game:
 https://khalid-altamimi.github.io/memory-project-game/
 
-Technologies Used:
+Attributions:
 https://www.youtube.com/watch?v=xWdkt6KSirw
 https://www.youtube.com/watch?v=DABkhfsBAWw
 https://www.youtube.com/watch?v=M0egyNvsN-Y
@@ -31,10 +31,17 @@ https://www.youtube.com/watch?v=ADwdef6vXZU
 https://www.youtube.com/watch?v=ZniVgo8U7ek
 https://www.tekeye.uk/playing_cards/svg-playing-cards
 
+Technologies Used:
+-CSS
+-Javascript
+-Html
+
+
 Next steps:
 Actually if I have more time to develop in this project, i will change 3 things.
 first is to add a start button
 second after clicking on start button, I will let the cards faced up for 5 second then they get flipped again to start matching
 third, After clicking play again i will change all of the ten cards into another 10 cards(5 pairs of cards), because what I have done now is only putting 10 cards in the html and they only get shuffled after restarting the game, So later on i will put all 52 cards on html so they can change later and get shuffled.
+
 
 
